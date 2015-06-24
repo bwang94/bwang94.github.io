@@ -25,27 +25,73 @@
 	</ul>
 	Each subscore is first scored out of 100 points, then brought down to its appropriate weight in the total score calculation.
 	<h3>Mobile Connectivity</h3>
-	The Mobile Connectivity subscore is directly based on a country's Mobile Subscriptions per 100 people. This subscore has two components:
+	The Mobile Connectivity subscore is directly based on a country's mobile subscriptions per 100 people. This subscore has two components:
 	<ul>
 		<li>Saturation Component (80 points)</li>
 		<ul>
 			<li>
-				Up to and including the first 100 subscriptions per 100 people, each subscriber contributes 0.8 points (1:1 ratio).
+				Up to and including the first 100 subscriptions per 100 inhabitants, each subscriber per 100 inhabitants contributes 0.8 points (1:1 ratio).
 			</li>
 		</ul>
 		<li>Efficiency Component (20 points)</li>
 		<ul>
 			<li>
-				From the 101st subscriber to the 200th subscriber, each subscriber contributes 0.2 points. Any additional subscriber beyond 200 contributes nothing.
+				From the 101st subscriber to the 200th subscriber per 100 inhabitants, each subscriber per 100 inhabitants contributes 0.2 points. Any additional subscriber beyond 200 contributes nothing.
 			</li>
 		</ul>
 	</ul>
 	 A perfect score would mean that each person has 2 subscriptions - one for work, one for personal use. Connectivity wise, there’s diminishing returns after each person has one subscription (on average). Therefore, this sub-score is weighted more heavily towards the first 100 subscribers per 100 people. In the context of quantifying connectivity, there is a negligible effect on people having more than two subscriptions.
 	<h3>Internet Connectivity</h3>
-	TODO
+	The Internet Connectivity subscore is directly based on a country's internet users per 100 inhabitants. Each internet user per 100 inhabitants contributes 1 point towards the subscore.
 	<h3>Landline Connectivity</h3>
-	TODO
+	The Landline Connectivity subscore is directly based on a country's number of fixed telephone lines per 100 inhabitants. Similar to the Internet Connectivity subscore, the Landline Connectivity subscore has two components:
+	<ul>
+		<li>Saturation Component (90 points)</li>
+		<ul>
+			<li>0-20 lines per 100 inhabitants = 37.5 points available</li>
+			<ul>
+				<li>
+					Each line per 100 inhabitants contributes 1.875 points
+				</li>
+			</ul>
+			<li>20-25 lines per 100 inhabitants = 27.5 points available</li>
+			<ul>
+				<li>
+					Each line per 100 inhabitants contributes 5.5 points
+				</li>
+			</ul>
+			<li>25-33 lines per 100 inhabitants = 17.5 points available</li>
+			<ul>
+				<li>
+					Each line per 100 inhabitants contributes 2.1875 points
+				</li>
+			</ul>
+			<li>33-50 lines per 100 inhabitants = 7.5 points available</li>
+			<ul>
+				<li>
+					Each line per 100 inhabitants contributes 0.441 points
+				</li>
+			</ul>
+		</ul>
+		<li>Efficiency Component (10 points)</li>
+		<ul>
+			<li>50-100 lines per 100 inhabitants = 10 points available</li>
+			<ul>
+				<li>Each line per 100 inhabitants contributes 0.2 points. No points given for lines above 100 lines per 100 inhabitants</li>
+			</ul>
+		</ul>
+	</ul>
+	Scoring is based on household size. 20 lines per 100 inhabitants means that a household of five people have telephone access, for example. As a country's ability to provide telephone access for households of smaller and smaller sizes, the score will increase. However, this increase is not directly proportional because it is not entirely neccessary for each person in a country to have access to a telephone. If one person in the household has access, that is sufficient from a saturation stand point.
 	<h3>Power Accessibility</h3>
-	TODO
+	The Power Accessibility subscore is directly based on the percentage of a country's population that has access to electricity. Each percentage point of the country's population that has access to electricity contributes 1 point towards the subscore.
+	<h3>Sources</h3>
+	All data has been obtained from <a href = "https://data.hdx.rwlabs.org/">The Humanitarian Data Exchange (HDX)</a>
+	Links to the datasets used for each subscore:
+	<ul>
+		<li><a href = "https://data.hdx.rwlabs.org/dataset/mobile_cellular_subscriptions_per_100_inhabitants">Mobile Connectivity</a></li>
+		<li><a href = "https://data.hdx.rwlabs.org/dataset/internet_users">Internet Connectivity</a></li>
+		<li><a href = "https://data.hdx.rwlabs.org/dataset/fixed_telephone_lines_per_100_inhabitants">Landline Connectivity</a></li>
+		<li><a href = "https://data.hdx.rwlabs.org/dataset/percentage_of_population_with_access_to_electricity">Power Accessibility</a></li>
+	</ul>
 </body>
 </html>
