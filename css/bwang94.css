@@ -10,6 +10,8 @@ body{
 	text-align:center;
 }
 
-.italics{
+.subtitle{
 	font-style:italic;
+	text-align:center;
+	color:gray;
 }
