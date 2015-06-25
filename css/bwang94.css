@@ -9,3 +9,7 @@ body{
 .centered{
 	text-align:center;
 }
+
+.italics{
+	font-style:italic;
+}
