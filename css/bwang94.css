@@ -3,15 +3,32 @@ body{
 	width:80%; 
 	margin-left:10%; 
 	margin-right:10%; 
-	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+	font-family: "HelveticaNeueThin", "HelveticaNeue-Thin", "Helvetica Neue Thin", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosRegular', "Arial", sans-serif; 
+	font-weight:200; 
+	font-stretch:normal;
 }
 
 .centered{
 	text-align:center;
 }
 
+.title{
+	text-align:center;
+	font-size:xx-large;
+	font-weight:500;
+}
+
 .subtitle{
 	font-style:italic;
 	text-align:center;
 	color:gray;
+	font-size:medium;
+}
+
+.emphasis{
+	font-weight:500;
+}
+
+.fullwidth{
+	width:100%;
 }
