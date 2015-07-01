@@ -4,29 +4,103 @@
    <meta http-equiv = "Content-Type" content = "text/html; charset=utf-8" />
         <meta name = "robots" content = "index,follow"/>
         <meta name = "description" content = "Brian Wang's GitHub page."/>
-        <link href = "css/bwang94.css" rel = "stylesheet" />
         <link rel = "shortcut icon" href = "icons/phone-8x.png"/>
+		<link href = "css/bwang94.css" rel = "stylesheet" />
   <title>Communications Access Index</title>
+  <script>
+  function go(loc) {
+    document.getElementById('regionscore').src = loc;
+  }
+  function diff(reg){
+  	document.getElementById('regiondiff').src = reg;
+  }
+  </script>
 </head>
 <body>
-	<div class = "title">Communications Access Index</div>
-	<div class = "subtitle">A Data Visualization Project by Brian Wang</div>
-	<p class = "centered">The Communications Access Index gives insight into how much of a country's population has access to communications through electronic means, such as landlines, the internet, mobile phones, and more. This index covers over 200 countries and territories across the world.</p>
-	<iframe width='100%' height='520' frameborder='0' src='https://bwang94.cartodb.com/viz/bc1b4194-1aab-11e5-9288-0e8dde98a187/embed_map' allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
+	<h1 class = "centered title">Communications Access Index</h1>
+	<p class = "lead centered">The Communications Access Index gives basic insight into a country's relative communication abilities. The index is based on access to mobile phones, internet, landlines, and electricity and covers over 200 countries and territories.
+	</p>
+	<hr>
+	<iframe width='100%' height='520' frameborder='0' src='https://bwang94.cartodb.com/viz/bc1b4194-1aab-11e5-9288-0e8dde98a187/embed_map' allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen>	
+	</iframe>
+	<hr>
+	<p></p>
 	<table class = "fullwidth">
 		<tr>
+			<div class = "lead centered"><strong>Comparison of CAI Scores by Region</strong></div>
+		</tr>
+		<tr>
 			<td>
-				<iframe width='500' height='350' frameborder = '0' src='svg/CAI_Continents_Scores.svg'></iframe>
+				<iframe width='125%' height='350' frameborder = '0' src='svg/CAI_Continents_Scores.svg'></iframe>
 			</td>
 			<td>
-				<iframe width='500' height='350' frameborder='0' src='svg/CAI_Continents_Differences.svg'></iframe>
+				<iframe width='125%' height='350' frameborder = '0' src='svg/CAI_Continents_Differences.svg'></iframe>
 			</td>
 		</tr>
 	</table>
-	
+	<hr>
 	<p></p>
-	<a href = "downloads/CAI_Paper.pdf" target = "_blank">Download the CAI paper</a>
-	<p class = "emphasis">Sources</p>
+	<table class = "fullwidth">
+		<tr>
+			<div class = "lead centered"><strong>Breakdown of CAI Scores by Region</strong></div>
+		</tr>
+		<tr class = "centered">
+			<td>
+				<a onmouseover = go('svg/CAI_Scores_Africa.svg')>Africa</a>
+			</td>
+			<td>
+				<a onmouseover = go('svg/CAI_Scores_Asia.svg')>Asia</a>
+			</td>
+			<td>
+				<a onmouseover = go('svg/CAI_Scores_Europe.svg')>Europe</a>
+			</td>
+			<td>
+				<a onmouseover = go('svg/CAI_Scores_Oceania.svg')>Oceania</a>
+			</td>
+			<td>
+				<a onmouseover = go('svg/CAI_Scores_NA.svg')>North America</a>
+			</td>
+			<td>
+				<a onmouseover = go('svg/CAI_Scores_SA.svg')>South America</a>
+			</td>
+			<td>
+				<a onmouseover = go('svg/CAI_Scores_Territories.svg')>Territories</a>
+			</td>
+		</tr>
+	</table>
+	<iframe id = "regionscore" width = "1000" height = "500" frameborder = '0' align = "middle"></iframe>
+	<hr>
+	<table class = "fullwidth">
+		<tr>
+			<div class = "lead centered"><strong>Breakdown of CAI Score Differences from World Average CAI by Region</strong></div>
+		</tr>
+		<tr class = "centered">
+			<td>
+				<a onmouseover = diff('svg/CAI_Differences_Africa.svg')>Africa</a>
+			</td>
+			<td>
+				<a onmouseover = diff('svg/CAI_Differences_Asia.svg')>Asia</ia>
+			</td>
+			<td>
+				<a onmouseover = diff('svg/CAI_Differences_Europe.svg')>Europe</a>
+			</td>
+			<td>
+				<a onmouseover = diff('svg/CAI_Differences_Oceania.svg')>Oceania</a>
+			</td>
+			<td>
+				<a onmouseover = diff('svg/CAI_Differences_NA.svg')>North America</a>
+			</td>
+			<td>
+				<a onmouseover = diff('svg/CAI_Differences_SA.svg')>South America</a>
+			</td>
+			<td>
+				<a onmouseover = diff('svg/CAI_Differences_Territories.svg')>Territories</a>
+			</td>
+		</tr>
+	</table>
+	<iframe id = "regiondiff" width = "1000" height = "500" frameborder = '0' align = "middle"></iframe>
+	<hr>
+	<strong><p>Sources</p></strong>
 	All data has been obtained from <a href = "https://data.hdx.rwlabs.org/">The Humanitarian Data Exchange (HDX).</a>
 	Links to the datasets used for each subscore:
 	<ul>
@@ -35,5 +109,6 @@
 		<li><a href = "https://data.hdx.rwlabs.org/dataset/fixed_telephone_lines_per_100_inhabitants">Landline Connectivity</a></li>
 		<li><a href = "https://data.hdx.rwlabs.org/dataset/percentage_of_population_with_access_to_electricity">Power Accessibility</a></li>
 	</ul>
+	<p><a href = "downloads/CAI_Paper.pdf" target = "_blank">Download the CAI paper</a></p>
 </body>
 </html>

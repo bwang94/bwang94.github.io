@@ -8,6 +8,13 @@ body{
 	font-stretch:normal;
 }
 
+strong{
+	font-weight:700
+}
+
+.lead{
+	font-size:larger;
+}
 .centered{
 	text-align:center;
 }
@@ -31,4 +38,23 @@ body{
 
 .fullwidth{
 	width:100%;
+}
+.centersvg{
+	padding-left:200
+}
+
+a:link{
+	text-decoration:none;
+	color:black;
+}
+a:visited{
+	text-decoration:none; 
+	color:black;
+}
+a:active{
+	text-decoration:none; 
+	color:black;
+}
+a:hover{
+	color:#56A5EC;
 }
