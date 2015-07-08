@@ -14,6 +14,18 @@
   function diff(reg){
   	document.getElementById('regiondiff').src = reg;
   }
+  function setDiffHeight(height){
+  	document.getElementById('regiondiff').height = height;
+  }
+  function setScoreHeight(h){
+  	document.getElementById('regionscore').height = h;
+  }
+  function setBlue(region){
+  	document.getElementById(region).className = "blue";
+  }
+  function setBlack(theregion){
+  	document.getElementById(theregion).className = "black";
+  }
   </script>
 </head>
 <body>
@@ -25,8 +37,8 @@
 	<span class = "lead">
 		<p class = "centered"><strong>Developed Nations Lead the Pack</strong></p>
 		<p>Led by Luxumbourg, developed nations have the highest scores while African and Southeast Asian countries are far behind.</p>
-		<p>Developing countries hover around average but must play catch-up to match the communication capabilities of developed nations.</p>
-		<p>It may be interesting to investigate why China, a country that produce much of the world's cutting edge, is barely above average.</p>
+		<p>Developing countries are around average but must play catch-up to match the communication capabilities of developed nations.</p>
+		<p>It may be interesting to investigate why China (which produces cutting edge technology) is barely above average.</p>
 	</span>
 	<iframe width='100%' height='490' frameborder='0' src='https://bwang94.cartodb.com/viz/bc1b4194-1aab-11e5-9288-0e8dde98a187/embed_map' allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen>	
 	</iframe>
@@ -37,7 +49,7 @@
 			<div class = "lead centered"><strong>Europe Leads, Africa Lags</strong></div>
 		</tr>
 		<tr>
-			<p class = "lead">Europe has the highest average CAI of all continents by almost 25 points.</p>
+			<p class = "lead">Europe has the highest average CAI of all regions by almost 25 points.</p>
 			<div class ="lead">North America, South America, and Asia are close to average while Oceania and Africa lag behind.</div>
 		</tr>
 		<tr>
@@ -76,29 +88,26 @@
 		</tr>
 		<tr class = "centered">
 			<td>
-				<a onmouseover = diff('svg/CAI_Differences_Africa.svg')>Africa</a>
+				<div id = "africadiff" class = "blue" onmouseover = "diff('svg/CAI_Differences_Africa.svg'); setDiffHeight('1170'); setBlue('africadiff'); setBlack('asiadiff'); setBlack('europediff'); setBlack('oceaniadiff'); setBlack('nadiff'); setBlack('sadiff')">Africa</div>
 			</td>
 			<td>
-				<a onmouseover = diff('svg/CAI_Differences_Asia.svg')>Asia</ia>
+				<div id = "asiadiff" onmouseover = "diff('svg/CAI_Differences_Asia.svg'); setDiffHeight('1170'); setBlack('europediff'); setBlack('oceaniadiff'); setBlack('nadiff'); setBlack('sadiff'); setBlack('africadiff'); setBlue('asiadiff')">Asia</div>
 			</td>
 			<td>
-				<a onmouseover = diff('svg/CAI_Differences_Europe.svg')>Europe</a>
+				<div id = "europediff" onmouseover = "diff('svg/CAI_Differences_Europe.svg'); setDiffHeight('1170'); setBlack('oceaniadiff'); setBlack('nadiff'); setBlack('sadiff'); setBlack('africadiff'); setBlack('asiadiff'); setBlue('europediff')">Europe</div>
 			</td>
 			<td>
-				<a onmouseover = diff('svg/CAI_Differences_Oceania.svg')>Oceania</a>
+				<div id = "oceaniadiff" onmouseover = "diff('svg/CAI_Differences_Oceania.svg'); setDiffHeight('685'); setBlue('oceaniadiff'); setBlack('nadiff'); setBlack('sadiff'); setBlack('africadiff'); setBlack('asiadiff'); setBlack('europediff')">Oceania</div>
 			</td>
 			<td>
-				<a onmouseover = diff('svg/CAI_Differences_NA.svg')>North America</a>
+				<div id = "nadiff" onmouseover = "diff('svg/CAI_Differences_NA.svg'); setDiffHeight('685'); setBlue('nadiff'); setBlack('oceaniadiff'); setBlack('sadiff'); setBlack('africadiff'); setBlack('asiadiff'); setBlack('europediff')">North America</div>
 			</td>
 			<td>
-				<a onmouseover = diff('svg/CAI_Differences_SA.svg')>South America</a>
-			</td>
-			<td>
-				<a onmouseover = diff('svg/CAI_Differences_Territories.svg')>Territories</a>
+				<div id = "sadiff" onmouseover = "diff('svg/CAI_Differences_SA.svg'); setDiffHeight('590'); setBlue('sadiff'); setBlack('nadiff'); setBlack('oceaniadiff'); setBlack('africadiff'); setBlack('asiadiff'); setBlack('europediff')">South America</div>
 			</td>
 		</tr>
 	</table>
-	<iframe id = "regiondiff" src = "svg/CAI_Differences_Africa.svg" width = "1000" height = "500" frameborder = '0' align = "middle"></iframe>
+	<iframe id = "regiondiff" src = "svg/CAI_Differences_Africa.svg" width = "1100" height = "1170" frameborder = '0' align = "middle"></iframe>
 	<hr>
 	<table class = "fullwidth">
 		<tr>
@@ -106,29 +115,26 @@
 		</tr>
 		<tr class = "centered">
 			<td>
-				<a onmouseover = go('svg/CAI_Scores_Africa.svg')>Africa</a>
+				<div id = "africascore" class = "blue" onmouseover = "go('svg/CAI_Scores_Africa.svg'); setScoreHeight('1170'); setBlue('africascore'); setBlack('asiascore'); setBlack('europescore'); setBlack('oceaniascore'); setBlack('nascore'); setBlack('sascore')">Africa</div>
 			</td>
 			<td>
-				<a onmouseover = go('svg/CAI_Scores_Asia.svg')>Asia</a>
+				<div id = "asiascore" onmouseover = "go('svg/CAI_Scores_Asia.svg'); setScoreHeight('1170'); setBlack('africascore'); setBlue('asiascore'); setBlack('europescore'); setBlack('oceaniascore'); setBlack('nascore'); setBlack('sascore')">Asia</div>
 			</td>
 			<td>
-				<a onmouseover = go('svg/CAI_Scores_Europe.svg')>Europe</a>
+				<div id = "europescore" onmouseover = "go('svg/CAI_Scores_Europe.svg'); setScoreHeight('1170'); setBlack('africascore'); setBlack('asiascore'); setBlue('europescore'); setBlack('oceaniascore'); setBlack('nascore'); setBlack('sascore')">Europe</div>
 			</td>
 			<td>
-				<a onmouseover = go('svg/CAI_Scores_Oceania.svg')>Oceania</a>
+				<div id = "oceaniascore" onmouseover = "go('svg/CAI_Scores_Oceania.svg'); setScoreHeight('685'); setBlack('africascore'); setBlack('asiascore'); setBlack('europescore'); setBlue('oceaniascore'); setBlack('nascore'); setBlack('sascore')">Oceania</div>
 			</td>
 			<td>
-				<a onmouseover = go('svg/CAI_Scores_NA.svg')>North America</a>
+				<div id = "nascore" onmouseover = "go('svg/CAI_Scores_NA.svg'); setScoreHeight('685'); setBlack('africascore'); setBlack('asiascore'); setBlack('europescore'); setBlack('oceaniascore'); setBlue('nascore'); setBlack('sascore')">North America</div>
 			</td>
 			<td>
-				<a onmouseover = go('svg/CAI_Scores_SA.svg')>South America</a>
-			</td>
-			<td>
-				<a onmouseover = go('svg/CAI_Scores_Territories.svg')>Territories</a>
+				<div id = "sascore" onmouseover = "go('svg/CAI_Scores_SA.svg'); setScoreHeight('590'); setBlack('africascore'); setBlack('asiascore'); setBlack('europescore'); setBlack('oceaniascore'); setBlack('nascore'); setBlue('sascore')">South America</div>
 			</td>
 		</tr>
 	</table>
-	<iframe id = "regionscore" src = "svg/CAI_Scores_Africa.svg" width = "1000" height = "500" frameborder = '0' align = "middle"></iframe>
+	<iframe id = "regionscore" src = "svg/CAI_Scores_Africa.svg" width = "1100" height = "1170" frameborder = '0' align = "middle"></iframe>
 	<hr>
 	<strong><p>Sources</p></strong>
 	All data has been obtained from <a href = "https://data.hdx.rwlabs.org/">The Humanitarian Data Exchange (HDX).</a>
